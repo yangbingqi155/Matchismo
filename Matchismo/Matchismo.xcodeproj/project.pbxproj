@@ -70,8 +70,7 @@
 		E44913781E6A5346002CB006 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
-				E4549A261E6E6629003C6952 /* PlayingCard.h */,
-				E4549A271E6E6638003C6952 /* PlayingCard.m */,
+				E460D7371E7128F90076D318 /* Model */,
 				E449137F1E6A5346002CB006 /* ViewController.h */,
 				E44913801E6A5346002CB006 /* ViewController.m */,
 				E44913821E6A5346002CB006 /* Main.storyboard */,
@@ -79,12 +78,6 @@
 				E44913871E6A5346002CB006 /* LaunchScreen.storyboard */,
 				E449138A1E6A5346002CB006 /* Info.plist */,
 				E44913791E6A5346002CB006 /* Supporting Files */,
-				E4549A201E6E487F003C6952 /* Card.h */,
-				E4549A231E6E5A88003C6952 /* Deck.h */,
-				E4549A241E6E5A94003C6952 /* Deck.m */,
-				E4549A211E6E48A8003C6952 /* Card.m */,
-				E4549A291E6E92D2003C6952 /* PlayingCardDeck.h */,
-				E4549A2A1E6E92DF003C6952 /* PlayingCardDeck.m */,
 			);
 			path = Matchismo;
 			sourceTree = "<group>";
@@ -97,6 +90,21 @@
 				E449137A1E6A5346002CB006 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E460D7371E7128F90076D318 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4549A261E6E6629003C6952 /* PlayingCard.h */,
+				E4549A271E6E6638003C6952 /* PlayingCard.m */,
+				E4549A201E6E487F003C6952 /* Card.h */,
+				E4549A231E6E5A88003C6952 /* Deck.h */,
+				E4549A241E6E5A94003C6952 /* Deck.m */,
+				E4549A211E6E48A8003C6952 /* Card.m */,
+				E4549A291E6E92D2003C6952 /* PlayingCardDeck.h */,
+				E4549A2A1E6E92DF003C6952 /* PlayingCardDeck.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
