@@ -21,10 +21,14 @@
 @implementation ViewController
 - (Deck *) deck{
     if(!_deck){
-        _deck=[[PlayingCardDeck alloc] init];
+        _deck=[self createDeck];
     }
     
     return _deck;        
+}
+
+- (Deck *) createDeck{
+    return  [[PlayingCardDeck alloc] init];
 }
 
 - (void) setFlipCount:(int)flipCount{
@@ -39,9 +43,12 @@
         [sender setTitle: @"" forState:UIControlStateNormal];
     }
     else{
-        [sender setBackgroundImage: [UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+        Card *card=[self.deck drawRandomCard];
+        if(card){
+            [sender setBackgroundImage: [UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+            [sender setTitle: card.contents forState:UIControlStateNormal];
+        }
         
-        [sender setTitle: [self.deck drawRandomCard].contents forState:UIControlStateNormal];
     }
     self.flipCount++;
     
