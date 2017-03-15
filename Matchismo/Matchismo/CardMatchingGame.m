@@ -12,9 +12,15 @@
 @interface CardMatchingGame()
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;
+
 @end
 
 @implementation CardMatchingGame
+// or static const int MISMATCH_PENALTY=2
+static const int MISMATCH_PENALTY=2;
+static const int MATCH_BONUS= 4;
+static const int COST_TO_CHOOSE=1;
+
 - (NSMutableArray *)cards{
     if(!_cards){
         _cards=[[NSMutableArray alloc] init];
@@ -22,6 +28,7 @@
     return _cards;
 }
 
+//Designated initializer
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck
 {
     self=[super init];
@@ -44,21 +51,19 @@
             if(otherCard.isChosen && !otherCard.isMatched){
                 int matchedScore=[card match:@[otherCard]];
                 if (matchedScore) {
-                    self.score+=matchedScore;
+                    self.score+=matchedScore*MATCH_BONUS;
                     card.matched=YES;
                     otherCard.matched=YES;
                 }
                 else
                 {
-                    
+                    self.score -= MISMATCH_PENALTY;
+                    otherCard.chosen=NO;
                 }
                 break;
             }
-            else
-            {
-                //otherCard.chosen=YES;
-            }
         }
+        self.score -=COST_TO_CHOOSE;
         card.chosen=YES;
     }
 }
