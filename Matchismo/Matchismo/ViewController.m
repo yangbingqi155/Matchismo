@@ -25,9 +25,12 @@
 - (CardMatchingGame *)game
 {
     if(!_game){
-        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+        _game = [self createGame];
     }
     return _game;
+}
+- (CardMatchingGame *) createGame{
+    return [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
 }
 - (Deck *) deck{
     if(!_deck){
@@ -46,6 +49,11 @@
     [self updateUI];
     
 }
+- (IBAction)newGameButton:(UIButton *)sender {
+    self.game=nil;
+    [self updateUI];
+}
+
 - (void)updateUI{
     for (UIButton *cardButton in self.cardButtons) {
         int cardButtonIndex=[self.cardButtons indexOfObject:cardButton];
