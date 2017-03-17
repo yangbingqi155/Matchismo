@@ -47,22 +47,35 @@ static const int COST_TO_CHOOSE=1;
         card.chosen=NO;
     }
     else{
+        NSMutableArray *chosenCards=[[NSMutableArray alloc] init];
         for (Card *otherCard in self.cards) {
             if(otherCard.isChosen && !otherCard.isMatched){
-                int matchedScore=[card match:@[otherCard]];
-                if (matchedScore) {
-                    self.score+=matchedScore*MATCH_BONUS;
-                    card.matched=YES;
-                    otherCard.matched=YES;
-                }
-                else
-                {
-                    self.score -= MISMATCH_PENALTY;
-                    otherCard.chosen=NO;
-                }
-                break;
+                [chosenCards addObject:otherCard];
             }
         }
+        
+        if([chosenCards count]+1==self.matchMode&&[chosenCards count]){
+            int matchedScore=[card match:chosenCards];
+            if(matchedScore){
+                self.score+=matchedScore*MATCH_BONUS;
+                card.matched=YES;
+            }
+            else{
+                self.score-=MISMATCH_PENALTY;
+            }
+            
+            for (Card *chosenCard in chosenCards) {
+                if(matchedScore){
+                    chosenCard.matched=YES;
+                    chosenCard.chosen=YES;
+                }
+                else{
+                    chosenCard.chosen=NO;
+                }
+            }
+            
+        }
+       
         self.score -=COST_TO_CHOOSE;
         card.chosen=YES;
     }
