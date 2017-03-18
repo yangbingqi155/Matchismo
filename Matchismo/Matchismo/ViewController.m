@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *matchedModelSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *lastResultLabel;
 
 @end
 
@@ -29,7 +30,7 @@
 {
     if(!_game){
         _game = [self createGame];
-        _game.matchMode=3;
+        _game.matchMode=2;
     }
     return _game;
 }
@@ -48,27 +49,27 @@
     return  [[PlayingCardDeck alloc] init];
 }
 - (IBAction)touchCardButton:(UIButton *)sender {
-    //[self.matchedModelSwitch setEnabled:NO];
+    [self.matchedModelSwitch setEnabled:NO];
     int cardButtonIndex=[self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardButtonIndex];
+    [self.lastResultLabel setText:self.game.lastResultMessage];
     [self updateUI];
-    
-}
-- (IBAction)changeMatchModeSwitch:(UISegmentedControl *)sender {
-    //if([sender selectedSegmentIndex]==0)
-    //{
-        //self.game.matchMode=2;
-    //}else if([sender selectedSegmentIndex]==1){
-        //self.game.matchMode=3;
-    //}
+   
 }
 
+- (IBAction)changeMatchedModeSwitch:(UISegmentedControl *)sender {
+    if([sender selectedSegmentIndex]==0)
+    {
+        self.game.matchMode=2;
+    }else if([sender selectedSegmentIndex]==1){
+        self.game.matchMode=3;
+    }
 
-
+}
 
 - (IBAction)newGameButton:(UIButton *)sender {
     self.game=nil;
-    //[self.matchedModelSwitch setEnabled:YES];
+    [self.matchedModelSwitch setEnabled:YES];
     [self updateUI];
 }
 
