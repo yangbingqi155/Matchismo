@@ -55,6 +55,7 @@ static const int COST_TO_CHOOSE=1;
         card.chosen=NO;
     }
     else{
+        self.lastResultMessage=nil;
         int winScore=0;
         BOOL isCanMatch=NO;
         NSMutableArray *chosenCards=[[NSMutableArray alloc] init];
@@ -98,13 +99,10 @@ static const int COST_TO_CHOOSE=1;
         }
         if(isCanMatch){
             if(winScore>0){
-                [self.lastResultMessage appendString:@"Matched "];
-                [self.lastResultMessage appendString:conentOfChosenCards];
-                [self.lastResultMessage appendFormat:@" for %d points.",winScore];
+                self.lastResultMessage=[NSMutableString stringWithFormat:@"Matched %@ %@ for %d points.",card.contents,conentOfChosenCards,winScore];
             }
             else{
-                [self.lastResultMessage appendString:conentOfChosenCards];
-                [self.lastResultMessage appendFormat:@" don't match! %d point penalty!",winScore];
+                self.lastResultMessage=[NSMutableString stringWithFormat:@"%@ %@ don't match! %d point penalty!",card.contents,conentOfChosenCards,-winScore];
             }
         }else
         {
