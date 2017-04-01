@@ -77,8 +77,11 @@ static const int SIGLE_SUIT_SCORE=1;
         NSMutableArray *matchedSuitCards=[[NSMutableArray alloc] init];
         NSMutableArray *chooseCards=[[NSMutableArray alloc] init];
         [chooseCards addObject:self];
-        for (PlayingCard *card in otherCards) {
-            [chooseCards addObject:card];
+        for (id card in otherCards) {
+            if([card isKindOfClass:[PlayingCard class]]){
+                [chooseCards addObject:(PlayingCard *)card];
+            }
+            
         }
         [self colletionMatchedCards:chooseCards matchedCards:matchedRankCards isRank:YES];
         [self colletionMatchedCards:chooseCards matchedCards:matchedSuitCards isRank:NO];
