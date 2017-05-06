@@ -19,6 +19,8 @@
 		E4549A281E6E6638003C6952 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4549A271E6E6638003C6952 /* PlayingCard.m */; };
 		E4549A2B1E6E92DF003C6952 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E4549A2A1E6E92DF003C6952 /* PlayingCardDeck.m */; };
 		E46A83F31E7B6CE7001F53C4 /* CardMatchMode.m in Sources */ = {isa = PBXBuildFile; fileRef = E46A83F21E7B6CE7001F53C4 /* CardMatchMode.m */; };
+		E473F2AA1EB9C52800268B35 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = E473F2A91EB9C52800268B35 /* SetCard.m */; };
+		E473F2AD1EB9D2BD00268B35 /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = E473F2AC1EB9D2BD00268B35 /* SetCardDeck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		E4549A2A1E6E92DF003C6952 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
 		E46A83F11E7B6CD6001F53C4 /* CardMatchMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardMatchMode.h; sourceTree = "<group>"; };
 		E46A83F21E7B6CE7001F53C4 /* CardMatchMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchMode.m; sourceTree = "<group>"; };
+		E473F2A81EB9C50E00268B35 /* SetCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetCard.h; sourceTree = "<group>"; };
+		E473F2A91EB9C52800268B35 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCard.m; sourceTree = "<group>"; };
+		E473F2AB1EB9D2AD00268B35 /* SetCardDeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetCardDeck.h; sourceTree = "<group>"; };
+		E473F2AC1EB9D2BD00268B35 /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardDeck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 				E45223E51E73D62000D66C72 /* CardMatchingGame.m */,
 				E46A83F11E7B6CD6001F53C4 /* CardMatchMode.h */,
 				E46A83F21E7B6CE7001F53C4 /* CardMatchMode.m */,
+				E473F2A81EB9C50E00268B35 /* SetCard.h */,
+				E473F2A91EB9C52800268B35 /* SetCard.m */,
+				E473F2AB1EB9D2AD00268B35 /* SetCardDeck.h */,
+				E473F2AC1EB9D2BD00268B35 /* SetCardDeck.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -190,7 +200,9 @@
 				E4549A281E6E6638003C6952 /* PlayingCard.m in Sources */,
 				E4549A251E6E5A94003C6952 /* Deck.m in Sources */,
 				E44913811E6A5346002CB006 /* ViewController.m in Sources */,
+				E473F2AD1EB9D2BD00268B35 /* SetCardDeck.m in Sources */,
 				E449137E1E6A5346002CB006 /* AppDelegate.m in Sources */,
+				E473F2AA1EB9C52800268B35 /* SetCard.m in Sources */,
 				E46A83F31E7B6CE7001F53C4 /* CardMatchMode.m in Sources */,
 				E45223E61E73D62000D66C72 /* CardMatchingGame.m in Sources */,
 				E4549A2B1E6E92DF003C6952 /* PlayingCardDeck.m in Sources */,
